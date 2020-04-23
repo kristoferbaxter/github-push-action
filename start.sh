@@ -19,8 +19,7 @@ _git_is_dirty() {
 
 if _git_is_dirty; then
     echo "Commit to branch $INPUT_BRANCH";
-    git config --local user.email "kristofer@kristoferbaxter.com"
-    git config --local user.name "Kristofer Baxter"
+    git remote add github "https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
     git add .
     git commit -m "Pushed Changes from Github Actions Bot"
 
@@ -35,9 +34,7 @@ if _git_is_dirty; then
 
     cd ${INPUT_DIRECTORY}
 
-    remote_repo="https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
-
-    git push "${remote_repo}" HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
+    git push github HEAD:${INPUT_BRANCH} --follow-tags $_FORCE_OPTION $_TAGS;
 else
     echo "Working tree clean. Nothing to commit."
 fi
