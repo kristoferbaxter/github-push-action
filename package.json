@@ -1,5 +1,11 @@
 {
-  "dependencies": {
-    "@actions/core": "^1.1.1"
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@actions/exec": "1.0.3",
+    "@rollup/plugin-commonjs": "11.1.0",
+    "@rollup/plugin-node-resolve": "7.1.3",
+    "rollup": "2.7.2"
   }
 }

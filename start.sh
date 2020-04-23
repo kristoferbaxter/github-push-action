@@ -19,6 +19,8 @@ _git_is_dirty() {
 
 if _git_is_dirty; then
     echo "Commit to branch $INPUT_BRANCH";
+    git config --local user.email "kristofer@kristoferbaxter.com"
+    git config --local user.name "Kristofer Baxter"
     git add .
     git commit -m "Pushed Changes from Github Actions Bot"
 

@@ -1,6 +1,6 @@
 name: 'GitHub Push'
 description: 'Pushing to GitHub repository local changes'
-author: 'ad-m'
+author: 'kristoferbaxter'
 branding:
   icon: upload-cloud
   color: green
@@ -28,4 +28,4 @@ inputs:
     default: '.'
 runs:
   using: 'node12'
-  main: 'start.js'
+  main: 'dist/index.js'
