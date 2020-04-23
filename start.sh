@@ -19,6 +19,8 @@ _git_is_dirty() {
 
 if _git_is_dirty; then
     echo "Commit to branch $INPUT_BRANCH";
+    git config user.email "kristofer@kristoferbaxter.com"
+    git config user.name "Kristofer Baxter"
     git remote add github "https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
     git add .
     git commit -m "Pushed Changes from Github Actions Bot"
