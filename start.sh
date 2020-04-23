@@ -8,12 +8,15 @@ INPUT_DIRECTORY=${INPUT_DIRECTORY:-'.'}
 _FORCE_OPTION=''
 REPOSITORY=${INPUT_REPOSITORY:-$GITHUB_REPOSITORY}
 
-echo "Push to branch $INPUT_BRANCH";
 [ -z "${INPUT_GITHUB_TOKEN}" ] && {
     echo 'Missing input "github_token: ${{ secrets.GITHUB_TOKEN }}".';
     exit 1;
 };
 
+echo "Commit to branch $INPUT_BRANCH";
+
+
+echo "Push to branch $INPUT_BRANCH";
 if ${INPUT_FORCE}; then
     _FORCE_OPTION='--force'
 fi
