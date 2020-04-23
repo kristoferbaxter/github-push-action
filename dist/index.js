@@ -1169,12 +1169,12 @@ exports.exec = exec;
 
 });
 
-var exec = unwrapExports(exec_1);
+unwrapExports(exec_1);
 var exec_2 = exec_1.exec;
 
 (async function() {
   try {
-    await exec(path.join(__dirname, "./start.sh"));
+    await exec_2(path.join(__dirname, "../start.sh"));
   } catch(err) {
     console.error(err);
     console.error(err.stack);
